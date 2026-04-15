@@ -1,0 +1,17 @@
+module(
+    name = "coursier_timeout_repro",
+    version = "0.0.0",
+)
+
+# Exact repro for the live Coursier resolution path exercised by Dawn.
+# This intentionally depends on rules_android directly, because the relevant
+# behavior is rules_android's own rules_android_maven repository plus the
+# secondary bazel_worker_maven repository it triggers during analysis.
+
+bazel_dep(name = "rules_android", version = "0.7.1")
+
+# Uncomment to compare against the local rules_jvm_external override:
+# local_path_override(
+#     module_name = "rules_jvm_external",
+#     path = "../rules_jvm_external",
+# )

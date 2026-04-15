@@ -1,0 +1,4 @@
+# Intentionally empty.
+#
+# The repro target is a public target from @rules_android:
+#   @rules_android//src/tools/java/com/google/devtools/build/android/r8:r8
