@@ -10,6 +10,13 @@ module(
 
 bazel_dep(name = "rules_android", version = "0.7.1")
 
+single_version_override(
+    module_name = "rules_android",
+    version = "0.7.1",
+    patches = ["//third_party/bazel_patches:rules_android_0.7.1_coursier_lock.patch"],
+    patch_strip = 1,
+)
+
 # Uncomment to compare against the local rules_jvm_external override:
 # local_path_override(
 #     module_name = "rules_jvm_external",
